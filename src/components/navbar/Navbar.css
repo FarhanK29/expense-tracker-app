@@ -1,0 +1,32 @@
+.navbar-container{
+    z-index: 1;
+    background-color: #fff;
+    font-size: 1rem;
+    line-height: 1.6;
+    box-shadow: 0 1px rgba(8,8,8,.12);
+    display:flex;
+    justify-content:space-between;
+    padding: 0px 40px;
+}
+/* .navbar-container{
+    padding:30px;
+    height:10%;
+    display:flex;
+    justify-content: space-between;
+    background: radial-gradient(circle at 85.4% 50.8%, rgb(14, 72, 222) 0%, rgb(3, 22, 65) 74.2%);
+} */
+
+.navbar-user{
+    display:flex;
+    align-items: center;
+    gap: 30px;
+}
+.navbar-logout-button{
+    color: black;
+    outline: none;
+    text-decoration: none;
+    border:none;
+    background:none;
+    transition: all 0.1s;
+    cursor:pointer;
+}

@@ -1,0 +1,16 @@
+.expense-home-container{
+    padding: 0px 60px;
+}
+
+.expense-info{
+    display:flex;
+    justify-content:space-between;
+    padding:15px 0px
+}
+
+.expense-home-inputs-amounts{
+    width: 85px;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' height='16px' width='85px'><text x='2' y='13' fill='gray' font-size='12' font-family='arial'>$</text></svg>");
+    padding-left: 12px;
+    background-repeat:no-repeat;
+}
