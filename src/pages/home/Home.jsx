@@ -3,6 +3,8 @@ import Navbar from '../../components/navbar/Navbar'
 import './Home.css'
 import { useAddTransaction } from '../../hooks/useAddTransaction';
 import { useGetTransactions } from '../../hooks/useGetTransactions';
+import { db } from '../../config/firebase';
+import { doc, deleteDoc } from 'firebase/firestore'
 
 const Home = () => {
   const { addTransaction } = useAddTransaction();
@@ -48,19 +50,24 @@ const Home = () => {
     event.target.amount.value = "";
   }
 
-  const deleteItem = (event) =>{
-    console.log("deleted");
+  const deleteItem = async (id) =>{
+    try{
+    await deleteDoc(doc(db, "transactions", id))
+    }
+    catch(error){
+      console.error("Failed to delete from database: ", error)
+    }
   }
 
 
-
   const transactionFormatted = transactions.map((transaction) => {
-    const{ description, transactionAmount, transactionType, createdAt } = transaction;
+    const{ description, transactionAmount, transactionType, id} = transaction;
     return(
-      <li>
+      <li key = {id}> 
         <h4>{description}</h4>
-        <p>${transactionAmount}</p>
-        <p> {transactionType}</p>
+        <p>${transactionAmount} - {transactionType}</p>
+        <button className = "expense-item-delete" onClick = {() => deleteItem(id)}>Delete</button>
+        <p>id = {id}</p>
       </li>
     )
   })
@@ -99,16 +106,6 @@ const Home = () => {
         <div className = "expense-income-list">
           <h2>Transactions</h2>
           <ul>
-            {/* {transactions.map((transaction) =>
-            {const {description, transactionAmount, transactionType } = transaction;
-            
-            return(
-              <li>
-                <h4>{description}</h4>
-                <p>${transactionAmount} - {transactionType}</p>
-              </li> 
-            )
-            })} */}
             {transactionFormatted}
           </ul>
         </div>
