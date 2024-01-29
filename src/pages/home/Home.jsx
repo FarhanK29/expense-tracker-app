@@ -16,17 +16,21 @@ const Home = () => {
   const handleIncomeSubmit = (event) => {
     event.preventDefault();
     const description = event.target.name.value;
-    const amount = parseFloat(event.target.amount.value);
+    const transactionAmount = parseFloat(event.target.amount.value);
     const transactionType = "income"
-
-    if(description !== "" || amount != null)
+ 
+    if(event.target.amount.value !== "")
     {
     addTransaction(
       {
-        description: event.target.name.value,
-        transactionAmount: parseFloat(event.target.amount.value),
-        transactionType: "income"
-      })
+        description,
+        transactionAmount,
+        transactionType
+      }
+      )
+    }
+    else{
+      alert("Invalid Amount")
     }
     event.target.name.value = "";
     event.target.amount.value = "";
@@ -35,16 +39,20 @@ const Home = () => {
   const handleExpenseSubmit = (event) =>{
     event.preventDefault();
     const description = event.target.name.value;
-    const amount = parseFloat(event.target.amount.value);
+    const transactionAmount = parseFloat(event.target.amount.value);
     const transactionType = "expense"
-    if(description !== "" || amount != null)
+
+     if(event.target.amount.value !== "")
     {
       addTransaction(
       {
-        description: event.target.name.value,
-        transactionAmount: parseFloat(event.target.amount.value),
-        transactionType: "expense"
+        description,
+        transactionAmount,
+        transactionType
       })
+    }
+    else{
+      alert("Invalid Amount");
     }
     event.target.name.value = "";
     event.target.amount.value = "";
@@ -67,7 +75,6 @@ const Home = () => {
         <h4>{description}</h4>
         <p>${transactionAmount} - {transactionType}</p>
         <button className = "expense-item-delete" onClick = {() => deleteItem(id)}>Delete</button>
-        <p>id = {id}</p>
       </li>
     )
   })
