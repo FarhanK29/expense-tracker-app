@@ -73,7 +73,12 @@ const Home = () => {
     return(
       <li key = {id}> 
         <h4>{description}</h4>
-        <p>${transactionAmount} - {transactionType}</p>
+        <p>${transactionAmount}</p> 
+        {
+          (transactionType === "expense")
+          ? <p className = "red">Expense</p>
+          : <p className = "green">Income</p>
+          }
         <button className = "expense-item-delete" onClick = {() => deleteItem(id)}>Delete</button>
       </li>
     )
@@ -92,27 +97,36 @@ const Home = () => {
           <h1 className = "expense-total">Expenses: ${expenses}</h1>
         </div>
 
-        <div className = "add-expense-container">
-          <h3>Add Income</h3>
-          <form className = "add-income-container" onSubmit = {handleIncomeSubmit}>
-            <input name = "name" placeholder = "Name" type = "text" className = "expense-home-inputs"/>
-            <input name = "amount" placeholder = "Amount" type = "text'" className = "expense-home-inputs-amounts"/>
-            <button className = "expense-home-buttons">Add</button>
-          </form>
-        </div>
-        
-        <div className = "add-expense-container">
-          <h3>Add Expenses</h3>
-          <form className = "add-expense-container" onSubmit = {handleExpenseSubmit}>
-            <input name = "name" placeholder = "Name" type = "text" className = "expense-home-inputs"/>
-            <input name = "amount" placeholder = "Amount" type = "number" className = "expense-home-inputs-amounts"/>
-            <button className = "expense-home-buttons">Add</button>
-          </form>
+        <div className = "add-transaction-container">
+          <div className = "add-expense-container">
+            <h3>Add Income</h3>
+            <form className = "add-income-form" onSubmit = {handleIncomeSubmit}>
+              <input name = "name" placeholder = "Name" type = "text" className = "expense-home-inputs"/>
+              <input name = "amount" placeholder = "Amount" type = "text'" className = "expense-home-inputs-amounts"/>
+              <button className = "expense-home-buttons">Add</button>
+            </form>
+          </div>
+          
+          <div className = "add-expense-container">
+            <h3>Add Expenses</h3>
+            <form className = "add-expense-form" onSubmit = {handleExpenseSubmit}>
+              <input name = "name" placeholder = "Name" type = "text" className = "expense-home-inputs"/>
+              <input name = "amount" placeholder = "Amount" type = "number" className = "expense-home-inputs-amounts"/>
+              <button className = "expense-home-buttons">Add</button>
+            </form>
+          </div>
         </div>
 
-        <div className = "expense-income-list">
+        <div className = "expense-income-list-container">
           <h2>Transactions</h2>
-          <ul>
+          <ul className = "expense-income-list">
+            <li>
+              <h4>Name</h4>
+              <p>Amount</p>
+              <p>Type</p>
+              <p className = "transparent-text"></p>
+            </li>
+            <hr></hr>
             {transactionFormatted}
           </ul>
         </div>

@@ -14,3 +14,60 @@
     padding-left: 12px;
     background-repeat:no-repeat;
 }
+
+.add-transaction-container{
+    display:flex;
+    justify-content:center;
+    gap:150px;
+}
+
+.expense-income-list-container{
+    padding-top:40px;
+    display:flex;
+    border:1px;
+    flex-direction:column;
+    align-items:center;
+}
+
+.expense-income-list{
+    height:400px;
+    width: 700px;
+    /* background:red; */
+    border: 1px solid;
+    overflow:auto;
+}
+.expense-income-list > hr{
+    margin-right:30px;
+}
+.expense-income-list > li{
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    /* gap:45px;*/
+    justify-content:center;
+    font-size:1.5rem;
+}
+
+.expense-income-list > li > button{
+    padding: 0 15px;
+    height:40px;
+    border-radius: 35px;
+    font-size:1rem;
+    background:rgba(5, 5, 141, 0.698);
+    color:white;
+    border:0;
+}
+.expense-income-list > li > *{
+    padding: 0 45px;
+}
+.transparent-text{
+    color:transparent;
+    padding:0;
+}
+
+.red{
+    color: #d31212;
+}
+.green{
+    color:#0a079be0;
+}
