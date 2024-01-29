@@ -103,7 +103,7 @@ const Home = () => {
             <form className = "add-income-form" onSubmit = {handleIncomeSubmit}>
               <input name = "name" placeholder = "Name" type = "text" className = "expense-home-inputs"/>
               <input name = "amount" placeholder = "Amount" type = "text'" className = "expense-home-inputs-amounts"/>
-              <button className = "expense-home-buttons">Add</button>
+              <button className = "expense-home-buttons-income">Add</button>
             </form>
           </div>
           
@@ -112,7 +112,7 @@ const Home = () => {
             <form className = "add-expense-form" onSubmit = {handleExpenseSubmit}>
               <input name = "name" placeholder = "Name" type = "text" className = "expense-home-inputs"/>
               <input name = "amount" placeholder = "Amount" type = "number" className = "expense-home-inputs-amounts"/>
-              <button className = "expense-home-buttons">Add</button>
+              <button className = "expense-home-buttons-expense">Add</button>
             </form>
           </div>
         </div>

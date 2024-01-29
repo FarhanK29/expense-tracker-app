@@ -8,11 +8,43 @@
     padding:15px 0px
 }
 
+
+.expense-home-buttons-income{
+    margin-left:15px;
+    width:60px;
+    height:30px;
+    background-color:#0a079be0;
+    color:white;
+    border-radius:15px;
+    border:1px white;
+}
+
+.expense-home-buttons-expense{
+    margin-left:15px;
+    width:60px;
+    height:30px;
+    background-color:#d31212;
+    color:white;
+    border-radius:15px; 
+    border:1px white;
+}
+
+.expense-home-inputs{    
+    border:2px solid;
+    margin-right:6px;
+    padding:6px;
+    padding-block:3px;
+}
+.expense-home-inputs-amounts{
+    padding-block: 3px;
+}
+
 .expense-home-inputs-amounts{
     width: 85px;
     background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' height='16px' width='85px'><text x='2' y='13' fill='gray' font-size='12' font-family='arial'>$</text></svg>");
     padding-left: 12px;
     background-repeat:no-repeat;
+    background-position-y: 2px;
 }
 
 .add-transaction-container{
@@ -22,7 +54,7 @@
 }
 
 .expense-income-list-container{
-    padding-top:40px;
+    padding-top:30px;
     display:flex;
     border:1px;
     flex-direction:column;
@@ -30,7 +62,7 @@
 }
 
 .expense-income-list{
-    height:400px;
+    height:385px;
     width: 700px;
     /* background:red; */
     border: 1px solid;
@@ -53,9 +85,13 @@
     height:40px;
     border-radius: 35px;
     font-size:1rem;
-    background:rgba(5, 5, 141, 0.698);
+    background:rgb(171, 14, 215);
     color:white;
     border:0;
+}
+
+button{
+    cursor: pointer;
 }
 .expense-income-list > li > *{
     padding: 0 45px;
@@ -64,6 +100,7 @@
     color:transparent;
     padding:0;
 }
+
 
 .red{
     color: #d31212;
