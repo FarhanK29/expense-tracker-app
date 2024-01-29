@@ -77,7 +77,7 @@ const Home = () => {
         {
           (transactionType === "expense")
           ? <p className = "red">Expense</p>
-          : <p className = "green">Income</p>
+          : <p className = "blue">Income</p>
           }
         <button className = "expense-item-delete" onClick = {() => deleteItem(id)}>Delete</button>
       </li>
@@ -92,9 +92,9 @@ const Home = () => {
 
       <div className = "expense-home-container">
         <div className = "expense-info">
+          <h1 className = "blue">Income:${income}  </h1>
           <h1 className = "expense-balance">Balance: ${balance}   </h1>
-          <h1 className = "expense-income">Income:${income}  </h1>
-          <h1 className = "expense-total">Expenses: ${expenses}</h1>
+          <h1 className = "red">Expenses: ${expenses}</h1>
         </div>
 
         <div className = "add-transaction-container">
