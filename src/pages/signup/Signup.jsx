@@ -4,7 +4,8 @@ import { createUserWithEmailAndPassword } from 'firebase/auth'
 import {auth} from "../../config/firebase"
 import { useNavigate, Link } from 'react-router-dom'
 
-const Signup = () => {
+const Signup = () => 
+{
 
     const [email, setEmail] = React.useState('');
     const [password, setPassword] = React.useState('');
@@ -15,6 +16,7 @@ const Signup = () => {
     const handleSubmit = async(e) => {
         e.preventDefault();
         try{
+          
             if(password === confirmPass){
             const userCredential = await createUserWithEmailAndPassword(auth, email, password);
             const user = userCredential.user
@@ -25,9 +27,10 @@ const Signup = () => {
             else{
                 alert("Passwords do not match!")
             }
-        } catch(error){
-            console.error(error)
         }
+        catch(error){
+            console.error(error)
+        } 
     }
 
    

@@ -2,7 +2,7 @@ import React from 'react'
 import './Login.css'
 import { signInWithEmailAndPassword } from 'firebase/auth'
 import {auth} from "../../config/firebase"
-import { useNavigate, Link } from 'react-router-dom'
+
 
 
 const Login = () => {
